@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles CRUD</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+</head>
+<body>
+    <section class="main">
+        <button class="main-btnAdd" id="main-btnAdd">Add new car</button>
+        <aside class="main-form-card">
+            <h2>Add a new car</h2>
+            <form id="carform">
+                <div class="group">
+                    <input required="" type="text" class="input" id="brand">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Brand</label>
+                </div>
+                <div class="group">
+                    <input required="" type="text" class="input" id="model">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Model</label>
+                </div>
+                <div class="group">
+                    <input required="" type="text" class="input" id="color">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Color</label>
+                </div>
+                <div class="group">
+                    <input required="" type="text" class="input" id="year">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Year</label>
+                </div>
+                <div class="group">
+                    <input required="" type="text" class="input" id="price">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Price</label>
+                </div>
+                <div class="group">
+                    <input  type="text" class="input" id="imgUrl">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Image url</label>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </aside>
+        <article class="main-cars">
+          <div class="card">
+            <div class="image-wrapper">
+              <i class="far fa-image icon"></i>
+            </div>
+            <div class="title">
+              <span>My New Brand</span>
+            </div>
+            <div class="row">
+                <div class="item">
+                  <span class="bold-txt">220</span>
+                  <span class="reg-txt">Elements</span>
+                </div>
+                <div class="item">
+                  <span class="bold-txt">20</span>
+                  <span class="reg-txt">Contributers</span>
+                </div>
+                <div class="item">
+                  <span class="bold-txt">100%</span>
+                  <span class="reg-txt">Free to Use</span>
+                </div>
+            </div>
+            <div class="price-btn">
+                <button class="delete-btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Edit</span>
+                  </button>
+              <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+                <span>Delete</span>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image-wrapper">
+              <i class="far fa-image icon"></i>
+            </div>
+            <div class="title">
+              <span>My New Brand</span>
+            </div>
+            <div class="row">
+                <div class="item">
+                  <span class="bold-txt">220</span>
+                  <span class="reg-txt">Elements</span>
+                </div>
+                <div class="item">
+                  <span class="bold-txt">20</span>
+                  <span class="reg-txt">Contributers</span>
+                </div>
+                <div class="item">
+                  <span class="bold-txt">100%</span>
+                  <span class="reg-txt">Free to Use</span>
+                </div>
+            </div>
+            <div class="price-btn">
+                <button class="delete-btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Edit</span>
+                  </button>
+              <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+                <span>Delete</span>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image-wrapper">
+              <i class="far fa-image icon"></i>
+            </div>
+            <div class="title">
+              <span>My New Brand</span>
+            </div>
+            <div class="row">
+                <div class="item">
+                  <span class="bold-txt">220</span>
+                  <span class="reg-txt">Elements</span>
+                </div>
+                <div class="item">
+                  <span class="bold-txt">20</span>
+                  <span class="reg-txt">Contributers</span>
+                </div>
+                <div class="item">
+                  <span class="bold-txt">100%</span>
+                  <span class="reg-txt">Free to Use</span>
+                </div>
+            </div>
+            <div class="price-btn">
+                <button class="delete-btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Edit</span>
+                  </button>
+              <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+                <span>Delete</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./Javascript/index.js"></script>
+</body>
+</html>
