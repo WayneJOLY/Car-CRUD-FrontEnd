@@ -5,7 +5,7 @@ const controlForm=document.querySelector(".main-form-card")
 const carForm=document.querySelector("#carform")
 const carsConstainer= document.querySelector("#main-cars")
 btnAdd.addEventListener("click",()=>{
-    controlForm.classList.remove("hide")
+    controlForm.classList.toggle("hide")
 })
 
 document.addEventListener("DOMContentLoaded",()=>{
@@ -25,7 +25,7 @@ const fechDatos=(async()=>{
           <i class="far fa-image icon"></i>
         </div>
         <div class="title">
-          <span>${car.brand}</span>
+          <span>${car.brand} - ${car.model}</span>
         </div>
         <div class="row">
             <div class="item">
@@ -42,7 +42,7 @@ const fechDatos=(async()=>{
             </div>
         </div>
         <div class="price-btn">
-            <button class="delete-btn">
+            <button class="update-btn">
                 <i class="fa-solid fa-pen-to-square"></i>
                 <span>Edit</span>
               </button>
@@ -59,7 +59,7 @@ const fechDatos=(async()=>{
     }
 })
 
-controlForm.classList.add("hide")
+
 carForm.addEventListener("submit",(e)=>{
     e.preventDefault()
     const car={
@@ -78,6 +78,8 @@ carForm.addEventListener("submit",(e)=>{
     }catch(error){
         console.log(error)
     }
+
+    controlForm.classList.add("hide")
 })
 
 document.querySelectorAll('input[type="text"]').forEach(input => {
