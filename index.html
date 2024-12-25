@@ -16,8 +16,11 @@
           <i class="fa-solid fa-plus"></i>
           <span>Add car</span>
         </button>
-        <aside class="main-form-card">
+        <aside class="main-form-card hide">
             <h2>Add a new car</h2>
+            <span class="close-btn" id="close-btn">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
             <form id="carform">
                 <div class="group">
                     <input required="" type="text" class="input" id="brand">
@@ -55,7 +58,10 @@
                     <span class="bar"></span>
                     <label for="imgUrl">Image url</label>
                 </div>
-                <button type="submit" class="send">Enviar</button>
+                <button type="submit" class="send">
+                  <i class="fa-regular fa-paper-plane"></i>
+                  Send
+                </button>
             </form>
         </aside>
         <article class="main-cars" id="main-cars">

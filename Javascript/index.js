@@ -4,27 +4,31 @@ const btnAdd=document.querySelector("#main-btnAdd")
 const controlForm=document.querySelector(".main-form-card")
 const carForm=document.querySelector("#carform")
 const carsConstainer= document.querySelector("#main-cars")
-const carDelete=document.querySelector("#delete-btn")
+
 const carUpdate=document.querySelector("#update-btn")
 const imageContainer=document.querySelector(".image-wrapper")
+const closeBtn=document.querySelector("#close-btn")
 btnAdd.addEventListener("click",()=>{
     controlForm.classList.toggle("hide")
 })
 
-carDelete.addEventListener("click",()=>{
-    console.log("Hice click en delete ")
+closeBtn.addEventListener("click",()=>{
+    controlForm.classList.add("hide")
 })
+
+
 
 document.addEventListener("DOMContentLoaded",()=>{
     fechDatos()
 })
 
 const fechDatos=(async()=>{
+   
     try{
         const response= await axios.get("http://localhost:8080/api/v1/cars")
         const cars=response.data
-       
-        cars.forEach(car => {
+        
+        cars?.forEach(car => {
             console.log(car)
             const mainDiv= document.createElement('div')
                   mainDiv.classList.add("card")
@@ -90,10 +94,36 @@ const fechDatos=(async()=>{
                     cardRow.appendChild(item2)
                     cardRow.appendChild(item3)
 
+                    const carContainerBtn=document.createElement("div")
+                             carContainerBtn.classList.add("price-btn")
+
+            
+                    const carUpdateBtn=document.createElement("button")
+                    carUpdateBtn.classList.add("update-btn")
+                    carUpdateBtn.innerHTML=`<i class="fa-solid fa-trash"></i>  <span>Update</span>`
+
+                    carUpdateBtn.addEventListener("click",()=>{
+                        window.location.href=`./update.html?id=${car.id}`
+                    })
+
+                    const carDeleteBtn=document.createElement("button")
+                    carDeleteBtn.classList.add("delete-btn")
+                    carDeleteBtn.setAttribute("id","delete-btn")
+                    carDeleteBtn.innerHTML=`<i class="fa-solid fa-trash"></i>     <span>Delete</span>`
+                    carDeleteBtn.addEventListener("click",()=>{
+                        deleteCar(car.id)
+                        fechDatos()
+                    })
+
+                    carContainerBtn.appendChild(carUpdateBtn)
+                    carContainerBtn.appendChild(carDeleteBtn)
+                    
 
                     mainDiv.appendChild(cardImageContainer)
                     mainDiv.appendChild(cardTitle)
                     mainDiv.appendChild(cardRow)
+                    mainDiv.appendChild(carContainerBtn)
+                    
 
                     carsConstainer.appendChild(mainDiv)
    //        carsConstainer.innerHTML+=`
@@ -157,6 +187,7 @@ carForm.addEventListener("submit",(e)=>{
     }
 
     controlForm.classList.add("hide")
+    fechDatos()
 })
 
 document.querySelectorAll('input[type="text"]').forEach(input => {
@@ -173,7 +204,7 @@ document.querySelectorAll('input[type="text"]').forEach(input => {
 
 const deleteCar =async(id)=>{
     try{
-        await axios.delete(`http://localhost:8080/api/v1/cars/:${id}`)
+        await axios.delete(`http://localhost:8080/api/v1/cars/${id}`)
     }catch(error){
         console.log(error)
     }
